@@ -6,3 +6,6 @@ Contains configuratios I'm using to program C/C++ on Linux
 <h3>Autocomplete: YCM</h3>
 <h3>CCLS language server for C/C++</h3>
 <h3>Dracula <a href=https://github.com/dracula/vim>theme</a></h3>
+
+<h2>C Programs:</h2>
+C programs I've written can be found in the directory <a href=https://github.com/jaakkoiot/Linux-Dev-Environment/tree/master/c_progs>c_progs</a>
