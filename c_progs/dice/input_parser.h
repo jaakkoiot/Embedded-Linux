@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 #define LINE 64
-#define MAX (SHRT_MAX - 2)
+#define MAX (SHRT_MAX - 1)
 
 uint16_t read_positive_int();
 int myatoi(char *s);

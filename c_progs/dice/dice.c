@@ -6,8 +6,8 @@ void generate(uint16_t count, uint16_t max, uint16_t min){
 
 	printf("Spewing random numbers between %d and %d:\n", min, max);
 	
-	//generate "count" amount of random numbers to the array between range
-	uint16_t arr[MAX] = {0};
+	//initialising an array the size of MAX + 1 will fit MAX amount of random integers inside
+	uint16_t arr[(MAX+1)] = {0};
 	for(;inclusions < count;){
 
 		//seed srand inside the generating loop with current system time
