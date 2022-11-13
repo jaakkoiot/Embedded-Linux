@@ -1,4 +1,4 @@
-# Linux-Dev-Environment
+# Linux Programming Platform
 Contains configuratios I'm using to program C/C++ on Linux
 
 <h3>Shell: ohmyzsh</h3>
