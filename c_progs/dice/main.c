@@ -61,7 +61,7 @@ int  main( int argc, char *argv[] ){
 		}
 	}
 	
-	printf("Generating %d numbers between %d and %d\n", count, min, max);
+	printf("Maximum %d | Minimum: %d | Count: %d\n", max, min, count);
 	
 	generate(count, max, min);	
 

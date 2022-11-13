@@ -4,13 +4,18 @@ void generate(uint16_t count, uint16_t max, uint16_t min){
 	bool unique = false, match = false;
 	uint16_t num = 0, inclusions = 0;
 
-	srand(time(0));
-	printf("Spewing random:\n");
+	printf("Spewing random numbers between %d and %d:\n", min, max);
 	
-	//generating "count" amount of random numbers to the array
+	//generate "count" amount of random numbers to the array between range
 	uint16_t arr[MAX] = {0};
 	for(;inclusions < count;){
+
+		//seed srand inside the generating loop with current system time
+		srand(time(0));
+		//generate number between min - max
 		num = (rand() % (max - min + 1)) + min;
+
+		//enforce to be unique: if a match is found the number will be discarded
 		for(int n = 0; n < (sizeof(arr)/sizeof(uint16_t)); n++){
 			if(arr[n] == num) match = true;
 		}
