@@ -1,5 +1,6 @@
 # Linux Programming Platform
-Contains configuratios I'm using to program C/C++ on Linux
+
+This repository contains configuratios I'm using to program C/C++/Lua among other things on Linux.
 
 <h3>Shell: ohmyzsh</h3>
 <h3>Editor: vim</h3>
