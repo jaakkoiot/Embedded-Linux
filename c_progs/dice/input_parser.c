@@ -1,7 +1,7 @@
 #include "input_parser.h"
 
 
-uint16_t read_positive_int(){
+uint16_t read_positive_integer(){
 	char input[LINE] = { 0 };
 	uint16_t number = 0, len = 0;
 	bool only_digits = true;
@@ -34,7 +34,7 @@ uint16_t read_positive_int(){
 			}	
 		}
 	}
-	return (uint16_t)number;
+	return number;
 }
 
 //this function is the same as atoi except it respects the program's maximum input
