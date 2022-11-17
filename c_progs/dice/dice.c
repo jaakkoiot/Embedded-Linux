@@ -4,12 +4,16 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi){
 	uint16_t count = c, max = ma, min = mi;
 	uint16_t num = 0, inclusions = 0;
 
-	printf("Spewing random numbers between %d and %d:\n", min, max);
+	printf("Spewing %d random numbers between %d and %d:\n",count, min, max);
 	
 	//initialising an array the size of MAX + 1 will fit MAX amount of random integers inside
 	uint16_t arr[count];
 	bool checkmap[count];
-	
+
+	//initialise checkmap to false
+	for(int i = 0; i < count; ++i ){
+		checkmap[i] = false;
+	}
 	
 	//seed rand
 	srand(time(0));
@@ -18,6 +22,7 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi){
 		//generate number between min - max
 		num = (rand() % (max - min + 1)) + min;
 
+		//check the number based on index of the check map
 		if(checkmap[num] == false){
 			arr[inclusions] = num;
 			checkmap[num] = true;
