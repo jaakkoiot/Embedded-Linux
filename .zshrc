@@ -75,7 +75,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
