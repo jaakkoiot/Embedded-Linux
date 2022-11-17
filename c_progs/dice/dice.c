@@ -6,40 +6,40 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi){
 
 	printf("Spewing %d random numbers between %d and %d:\n",count, min, max);
 	
-	//initialising an array the size of MAX + 1 will fit MAX amount of random integers inside
-	uint16_t arr[count];
+	//initialising an array the size of MAX
+	uint16_t* arr;
+       	arr=(uint16_t*)malloc(count*sizeof(uint16_t));
 	bool checkmap[count];
 
-	//initialise checkmap to false
-	for(int i = 0; i < count; ++i ){
+	//initialise checkmap to false and array to 0
+	for(uint16_t i = 0; i < count; ++i ){
 		checkmap[i] = false;
 	}
 	
 	//seed rand
-	srand(time(0));
+	srand(time(NULL));
 
 	do{
 		//generate number between min - max
 		num = (rand() % (max - min + 1)) + min;
-
+		//printf("%d\n",num);
 		//check the number based on index of the check map
-		if(checkmap[num] == false){
-			arr[inclusions] = num;
-			checkmap[num] = true;
+		if(checkmap[(num-min)] == false){
+			memcpy(&arr[inclusions],&num,sizeof(uint16_t));
+			//arr[inclusions] = num;
+			//printf("%d\n",arr[inclusions]);
+			checkmap[(num-min)] = true;
 			inclusions++;
 		}
-
 	}while(inclusions < count);
-		
+
 	printf("\n______________________________________\nPrinting spewage:\n\n");
 
-	//print array of random integers
-	for(int k = 0; k < inclusions; k++){
-	       	if(arr[k] != 0){
-			printf("#%d : %d\t", (k+1), arr[k]);
-		}
+	for(int n = 0; n < count; n++){
+		printf("%d:%d\t",n+1,arr[n]);
 	}
 
+	free(arr);
   return;
 }
 
