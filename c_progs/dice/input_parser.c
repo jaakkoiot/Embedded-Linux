@@ -1,6 +1,6 @@
 #include "input_parser.h"
 
-
+//reading 16-bit positive integers with no range checking as that is performed in the main.c
 uint16_t read_positive_integer(){
 	char input[LINE] = { 0 };
 	uint16_t number = 0, len = 0;
@@ -9,6 +9,7 @@ uint16_t read_positive_integer(){
 	while (number <= 0 || number > MAX || !only_digits) {
 		only_digits = true;		
 		
+		//Using fgets inside the if-statement uses the return value in a nice manner as NULL results in an error message
 		if(fgets(input, LINE, stdin) == NULL){
 			fprintf(stderr,"Error reading user input.\n");
 		}
@@ -34,7 +35,7 @@ uint16_t read_positive_integer(){
 	return number;
 }
 
-//this function is the same as atoi except it respects the program's maximum input
+//this custom atoi respects the program's maximum input
 uint16_t myatoi(char *s){
 	uint16_t result = 0, minus_check = *s == '-';
 	while(isdigit(*s)){

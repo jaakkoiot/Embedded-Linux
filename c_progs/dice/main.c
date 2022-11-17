@@ -5,10 +5,13 @@ int  main( int argc, char *argv[] ){
 	uint16_t count = 0, min = 0, max = 0;
 
 	printf("Welcome to the positive spewer.\n\nCan generate at most %d random positive integers.\n\n", ARR_MAX);
+
+	//Only at maximum 3 parameters are expected from command line
 	if(argc >= 5){
 		fprintf(stderr,"Too many input arguments. They are disregarded.\n");
 	}
 	if(argc == 4){
+		/**Command line parameters: #1 count | #2 maximum of the random range | #3 minimum of the range **/
 		count = myatoi(argv[1]);
 		max = myatoi(argv[2]);
 		min = myatoi(argv[3]);
@@ -52,7 +55,7 @@ int  main( int argc, char *argv[] ){
 			if(count > (max-min) && min < max && count < ARR_MAX){
 				fprintf(stderr,"Range needs to fit %d unique integers!\nOnly %d integers can be generated.\nResetting parameters.\n\n", count, (max-min+1));
 				max = min = count = 0;
-				break;
+				break; //prevent loop by breaking
 			}else if(min > max){
 				fprintf(stderr,"Minimum cannot be over maximum of %d.\n Resetting range.\n\n", max);
 				max = min = count = 0;
