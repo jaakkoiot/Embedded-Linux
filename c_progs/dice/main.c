@@ -13,26 +13,26 @@ int  main( int argc, char *argv[] ){
 		max = myatoi(argv[2]);
 		min = myatoi(argv[3]);
 
-		if(count > 0 && count < (max-min) && count < ARR_MAX){
+		if(count > 0 && count <= (max-min+1) && count <= ARR_MAX){
 			printf("Parameters from command line: count %d, max %d, min %d\n", count, max, min);
 		}else{
-			fprintf(stderr,"Error: invalid arguments from command line.\nFirst argument is count of numbers, second is max of range and third is min of range.\n");
+			fprintf(stderr,"Error (count|max|min): invalid arguments from command line.\nFirst argument is count of numbers, second is max of range and third is min of range.\n");
 			count = max = min = 0;
 		}
 	}else if(argc == 3){
 		count = myatoi(argv[1]);
 		max = myatoi(argv[2]);
 
-		if(count > 0 && count < ARR_MAX){
+		if(count > 0 && count <= ARR_MAX){
 			printf("Parameters from command line: count %d, max %d, min %d\n", count, max, min);
 		}else{
 			
-			fprintf(stderr,"Error: invalid arguments from command line.\nFirst argument is count of numbers, second is max of range and third is min of range.\n");
+			fprintf(stderr,"Error (count|max): invalid arguments from command line.\nFirst argument is count of numbers, second is max of range and third is min of range.\n");
 			count = max = 0;
 		}
 	}else if(argc == 2){
 		count = atoi(argv[1]);
-		if(count > 0 && count < ARR_MAX){
+		if(count > 0 && count <= ARR_MAX){
 			printf("Parameters from command line: count %d", count);
 		}
 	}

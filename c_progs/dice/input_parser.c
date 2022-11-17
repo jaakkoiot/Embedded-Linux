@@ -7,17 +7,14 @@ uint16_t read_positive_integer(){
 	bool only_digits = true;
 		
 	while (number <= 0 || number > MAX || !only_digits) {
-		only_digits = true;
+		only_digits = true;		
 		
-		fgets(input, LINE, stdin);
-		
-		input[strcspn(input, "\n")] = 0;    //remove trailing newline
-		len = strlen(input);
-		
-		if(input == NULL){
+		if(fgets(input, LINE, stdin) == NULL){
 			fprintf(stderr,"Error reading user input.\n");
 		}
 		else{
+			input[strcspn(input, "\n")] = 0;    //remove trailing newline
+                   	len = strlen(input);
 			for(int i = 0; i< (len-2); i++){
 				if(!isdigit(input[i]) && only_digits){
 					fprintf(stderr,"Input is not a number\nOnly positive integers under %d are allowed.\nTry again:\n",MAX);
@@ -45,6 +42,6 @@ int myatoi(char *s){
 	}
 	if(minus_check) result = 0;
 
-	return result < MAX ? result : 0;
+	return result <= MAX ? result : 0;
 	
 }
