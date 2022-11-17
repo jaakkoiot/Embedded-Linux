@@ -1,4 +1,5 @@
 #include <time.h>
+#include <inttypes.h>
 #include "input_parser.h"
 
 #define ARR_MAX SHRT_MAX
