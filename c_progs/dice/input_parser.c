@@ -35,8 +35,8 @@ uint16_t read_positive_integer(){
 }
 
 //this function is the same as atoi except it respects the program's maximum input
-int myatoi(char *s){
-	int result = 0, minus_check = *s == '-';
+uint16_t myatoi(char *s){
+	uint16_t result = 0, minus_check = *s == '-';
 	while(isdigit(*s)){
 		result = result * 10 + (*s++ - '0');
 	}

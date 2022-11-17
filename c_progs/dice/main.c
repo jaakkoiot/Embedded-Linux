@@ -50,7 +50,7 @@ int  main( int argc, char *argv[] ){
 			printf("Enter minimum of the range:\n");
 			min = read_positive_integer();
 			if(count > (max-min) && min < max && count < ARR_MAX){
-				fprintf(stderr,"Range needs to fit %d unique integers!\nOnly %d integers can be generated.\nResetting parameters.\n\n", count, (max-min));
+				fprintf(stderr,"Range needs to fit %d unique integers!\nOnly %d integers can be generated.\nResetting parameters.\n\n", count, (max-min+1));
 				max = min = count = 0;
 				break;
 			}else if(min > max){

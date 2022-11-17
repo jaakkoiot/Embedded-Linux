@@ -10,4 +10,4 @@
 #define MAX SHRT_MAX
 
 uint16_t read_positive_integer();
-int myatoi(char *s);
+uint16_t myatoi(char *s);
