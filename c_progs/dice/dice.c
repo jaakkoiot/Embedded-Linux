@@ -6,7 +6,7 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi){
 
 	printf("Spewing %d random numbers between %d and %d:\n",count, min, max);
 	
-	//initialising an array the size of MAX
+	//initialising dynamic array with size of count * uint16_t 
 	uint16_t* arr;
        	arr=(uint16_t*)malloc(count*sizeof(uint16_t));
 	bool checkmap[count];
