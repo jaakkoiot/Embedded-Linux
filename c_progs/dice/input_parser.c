@@ -46,3 +46,5 @@ uint16_t myatoi(char *s){
 	return result <= MAX ? result : 0;
 	
 }
+
+
