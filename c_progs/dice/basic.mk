@@ -1,25 +1,17 @@
-CC=gcc
-CLAGS=-Wall -Wextra
-EXE=Dice
-
-all: mainapp
+basic: mainapp
 
 mainapp: input_parser.o dice.o main.o
-	$(CC) $(CFLAGS) main.o input_parser.o dice.o -o $(EXE)
+	gcc -Wall -Wextra  main.o input_parser.o dice.o -o Dice
 
 input_parser.o: input_parser.c
-	$(CC) -c $(CFLAGS) input_parser.c -o input_parser.o
+	gcc -c -Wall -Wextra input_parser.c -o input_parser.o
 
 dice.o: dice.c
-	$(CC) -c $(CFLAGS) dice.c -o dice.o
+	gcc -c -Wall -Wextra dice.c -o dice.o
 
 main.o: main.c
-	$(CC) -c $(CFLAGS) main.c -o main.o
+	gcc -c -Wall -Wextra main.c -o main.o
 
 clean:
-	rm *.o $(EXE)
+	rm *.o Dice
 
-#What I previously used to create the executable Dice:
-
-#dicemake: main.c input_parser.c dice.c
-#		gcc *.c -Wall -Wextra -Wpedantic -o Dice
