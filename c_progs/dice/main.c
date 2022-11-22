@@ -55,18 +55,16 @@ int  main( int argc, char *argv[] ){
 			if(count > (max-min) && min < max && count < ARR_MAX){
 				fprintf(stderr,"Range needs to fit %d unique integers!\nOnly %d integers can be generated.\nResetting parameters.\n\n", count, (max-min+1));
 				max = min = count = 0;
-				break; //prevent loop by breaking
 			}else if(min > max){
 				fprintf(stderr,"Minimum cannot be over maximum of %d.\n Resetting range.\n\n", max);
 				max = min = count = 0;
-				break; //break needs to be called here as the min > max will otherwise cause a loop
 			}
 		}
 	}
 	
 	printf("Maximum %d | Minimum: %d | Count: %d\n", max, min, count);
-	
-	generate(count, max, min);	
+
+	generate(count, max, min);
 
 	return 0;
 }
