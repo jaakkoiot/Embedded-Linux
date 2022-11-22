@@ -17,8 +17,11 @@ Plug 'zxqfl/tabnine-vim'
 endif
 call plug#end()
 
+map <f9> :make<CR>
 map q :quit<CR>
 map <C-s> :write<CR>
+
+"set makeprg <put here> to change what running make <f9> does 
 set nu!
 set mouse=a
 set title
