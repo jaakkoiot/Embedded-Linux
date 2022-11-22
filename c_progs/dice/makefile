@@ -17,7 +17,7 @@ main.o: main.c
 	$(CC) -c $(CFLAGS) main.c -o main.o
 
 clean:
-	rm a.out *.o $(EXE)
+	rm *.o $(EXE)
 
 #What I previously used to create the executable Dice:
 
