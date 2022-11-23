@@ -12,6 +12,9 @@ dice.o: dice.c
 main.o: main.c
 	gcc -c -Wall -Wextra main.c -o main.o
 
+clean_objects:
+	rm *.o
+
 clean:
 	rm *.o Dice
 
