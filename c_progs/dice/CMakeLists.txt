@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.22)
 
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
@@ -14,10 +14,10 @@ include_directories(
 )
 
 add_executable(Dice
-	input_parser.h
-	input_parser.c
-	dice.h
-	dice.c
-	main.c)
+	inc/input_parser.h
+	src/input_parser.c
+	inc/dice.h
+	src/dice.c
+	src/main.c)
 
 
