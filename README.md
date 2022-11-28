@@ -9,5 +9,6 @@ This repository contains configuratios I'm using to program C/C++/Lua among othe
 <h3>Dracula <a href=https://github.com/dracula/vim>theme</a></h3>
 
 <h2>Programs:</h2>
-<h4><a href=https://github.com/jaakkoiot/Linux-Dev-Environment/tree/master/c_progs/dice>dice</a>: <b>the Robust Positive Random Integer Generator</b></h4>
+<h3><a href=https://github.com/jaakkoiot/Linux-Dev-Environment/tree/master/c_progs/dice>Dice</a></h3>
+<p>dice<b>the Robust Positive Random Integer Generator</b></p>
 <p>language: <b>C 17</b></p><p>interface: <b>CLI</b></p>
