@@ -1,3 +1,0 @@
-/home/jaakko/c_progs/dice/bin/CMakeFiles/Dice.dir
-/home/jaakko/c_progs/dice/bin/CMakeFiles/edit_cache.dir
-/home/jaakko/c_progs/dice/bin/CMakeFiles/rebuild_cache.dir

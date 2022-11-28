@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/Dice.dir/src/input_parser.c.o CMakeFiles/Dice.dir/src/dice.c.o CMakeFiles/Dice.dir/src/main.c.o -o Dice 
