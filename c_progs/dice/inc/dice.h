@@ -1,6 +1,6 @@
 #include <time.h>
 #include <inttypes.h>
-#include "input_parser.h"
+#include "../inc/input_parser.h"
 
 //maximum array sie of the program is 32 767 
 #define ARR_MAX SHRT_MAX

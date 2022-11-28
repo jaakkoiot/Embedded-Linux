@@ -1,4 +1,4 @@
-#include "input_parser.h"
+#include "../inc/input_parser.h"
 
 //reading 16-bit positive integers with no range checking as that is performed in the main.c
 uint16_t read_positive_integer(){

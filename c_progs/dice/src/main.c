@@ -1,5 +1,5 @@
-#include "dice.h"
-#include "input_parser.h"
+#include "../inc/dice.h"
+#include "../inc/input_parser.h"
 
 int  main( int argc, char *argv[] ){
 	uint16_t count = 0, min = 0, max = 0;
