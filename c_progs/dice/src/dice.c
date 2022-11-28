@@ -1,4 +1,4 @@
-#include "dice.h"
+#include "../inc/dice.h"
 
 void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 	uint16_t count = c, max = ma, min = mi;
@@ -25,9 +25,10 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 
 		//check the number based on index of the check map
 		if (checkmap[(num - min)] == false) {
-			memcpy(&arr[inclusions],&num,sizeof(uint16_t));
-			checkmap[(num - min)] = true;
-			inclusions++;
+			if(memcpy_safe(&arr[inclusions],sizeof(arr),&num,sizeof(uint16_t))){
+				checkmap[(num - min)] = true;
+				inclusions++;
+			}
 		}
 	} while (inclusions < count);
 
@@ -43,4 +44,24 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 
 	free(arr);
 	return;
+}
+
+int memcpy_safe(void* dst, size_t dst_size, void* src, size_t src_size){
+
+	//validation: data to copy or source must not be 0 and sie of the destination must be large enough to hold data being copied
+	if (src_size == 0){
+		return 0;
+	}
+	
+	if (src == NULL || dst_size < src_size){
+        	/* zeroe the destination buffer */
+        	memset(dst, 0, dst_size);
+		
+		return 0;
+	}
+	
+	//after validation, the program can continue to use memcpy
+	memcpy(dst, src, dst_size);
+    	return 1;
+
 }
