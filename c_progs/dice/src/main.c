@@ -64,7 +64,7 @@ int  main( int argc, char *argv[] ){
 	
 	printf("Maximum %d | Minimum: %d | Count: %d\n", max, min, count);
 
-	generate(count, max, min);
+	generate(&count, &max, &min);
 
 	printf("\n---End of program.---\n");
 	return 0;
