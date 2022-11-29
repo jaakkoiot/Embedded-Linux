@@ -5,8 +5,6 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 	uint16_t num = 0;
 	int inclusions = 0;
 
-	printf("Spewing %d random numbers between %d and %d:\n", count, min, max);
-
 	//initialising dynamic array with size of count * uint16_t 
 	uint16_t* arr = (uint16_t*)malloc((count + 1) * sizeof(uint16_t));
 	bool checkmap[ARR_MAX];
@@ -29,15 +27,15 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 				checkmap[(num - min)] = true;
 				//inclusions is the final, incrementing index of the resulting array
 				inclusions++;
+			}else{
+				fprintf(stderr, "Cannot access memory in copy operation.\n");
+				return;
 			}
 		}
 	} while (inclusions < count);
 
-	size_t dataunit = sizeof(uint16_t);
-	size_t size = (count + 1) * dataunit;
-
-	printf("\nSize of data point is%lu\nSize of the generated array is: %lu\n", sizeof(uint16_t), size);
 	printf("\n______________________________________\nPrinting spewage:\n\n");
+	printf("Spewing %d random numbers between %d and %d:\n", count, min, max);
 
 	for (int n = 0; n < inclusions; n++) {
 		printf("%d:%d\n", n + 1, arr[n]);
