@@ -1,5 +1,8 @@
-# Set up the prompt
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
+# Set up the prompt
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -17,6 +20,10 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# User configuration
+TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
+ZSH_THEME="robbyrussell"
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
