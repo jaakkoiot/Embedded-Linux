@@ -34,7 +34,7 @@ void generate(uint16_t c, uint16_t ma, uint16_t mi) {
 		}
 	} while (inclusions < count);
 
-	printf("\n______________________________________\nPrinting spewage:\n\n");
+	printf("\n______________________________________\n\n");
 	printf("Spewing %d random numbers between %d and %d:\n", count, min, max);
 
 	for (int n = 0; n < inclusions; n++) {
