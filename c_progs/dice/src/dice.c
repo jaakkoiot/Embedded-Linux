@@ -2,7 +2,7 @@
 
 void generate(uint16_t *count, uint16_t *max, uint16_t *min) {
 	uint16_t num = 0;
-	int inclusions = 0;
+	uint16_t inclusions = 0;
 
 	//initialising dynamic array with size of count * uint16_t 
 	uint16_t* arr = (uint16_t*)malloc((*count + 1) * sizeof(uint16_t));
