@@ -4,4 +4,4 @@
 
 <p>Dynamic memory is accessed with validation and the parameters are always checked before generation.</p>
 
-<p>Two makefiles and a configured CMake set to use C std ver 17 and compile on gcc.</p>
+<p>Two makefiles and CMake configured to use C std ver 17 and compile on gcc.</p>
