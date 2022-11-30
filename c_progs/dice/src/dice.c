@@ -1,6 +1,6 @@
 #include "../inc/dice.h"
 
-void generate(uint16_t *count, uint16_t *max, uint16_t *min) {
+void generate(const uint16_t *count, const uint16_t *max, const uint16_t *min) {
 	uint16_t num = 0;
 	//inclusions is the incrementing index of the array that this function generates
 	uint16_t inclusions = 0;
