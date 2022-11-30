@@ -2,9 +2,10 @@
 
 void generate(uint16_t *count, uint16_t *max, uint16_t *min) {
 	uint16_t num = 0;
+	//inclusions is the incrementing index of the array that this function generates
 	uint16_t inclusions = 0;
 
-	//initialising dynamic array with size of count * uint16_t 
+	//initialising the dynamic array with size of count * uint16_t - this will contain the generated numbers
 	uint16_t* arr = (uint16_t*)malloc((*count + 1) * sizeof(uint16_t));
 	bool checkmap[ARR_MAX];
 
@@ -17,14 +18,13 @@ void generate(uint16_t *count, uint16_t *max, uint16_t *min) {
 	srand(time(NULL));
 
 	do {
-		//generate number between min - max, it is still a candidate without validation (enforce unique)
+		//generate number between min - max, it is still only a candidate without validation (enforce to be unique)
 		num = (rand() % (*max - *min + 1)) + *min;
 		//check the number based on index of the check map
 		if (checkmap[(num - *min)] == false) {
 			//if checkmap indicates the value is not present -> program attempts to copy it to the array in a safe manner: if it succeeds the checkmap is changed to true on position
 			if(memcpy_safe(&arr[inclusions],sizeof(arr),&num,sizeof(uint16_t))){
 				checkmap[(num - *min)] = true;
-				//inclusions is the final, incrementing index of the resulting array
 				inclusions++;
 			}else{
 				fprintf(stderr, "Cannot access memory in copy operation.\n");
@@ -45,7 +45,6 @@ void generate(uint16_t *count, uint16_t *max, uint16_t *min) {
 }
 
 int memcpy_safe(void* dst, size_t dst_size, void* src, size_t src_size){
-
 	//validation: data to copy or source must not be 0 and sie of the destination must be large enough to hold data being copied
 	if (src_size == 0){
 		return 0;
