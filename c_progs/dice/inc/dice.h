@@ -5,6 +5,13 @@
 //maximum array sie of the program is 32 767 
 #define ARR_MAX SHRT_MAX
 
+//bitfield-handling static inline functions
+void SET(uint16_t BF, uint16_t N);
+
+void CLR(uint16_t BF, uint16_t N);
+
+bool IS_SET(uint16_t BF, uint16_t N);
+
 /**16-bit positive random generator with random order of elements, just because. Uses dynamic memory allocation inside -> to-do: change the passed parameters to pointers?**/
 void generate(const uint16_t *count, const uint16_t *min, const uint16_t *max);
 

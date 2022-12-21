@@ -7,12 +7,9 @@ void generate(const uint16_t *count, const uint16_t *max, const uint16_t *min) {
 
 	//initialising the dynamic array with size of count * uint16_t - this will contain the generated numbers
 	uint16_t* arr = (uint16_t*)malloc((*count + 1) * sizeof(uint16_t));
-	bool checkmap[ARR_MAX];
-
-	//initialise checkmap to false and array to 0
-	for (uint16_t i = 0; i < ARR_MAX; ++i) {
-		checkmap[i] = false;
-	}
+	
+	//using a bitfield for checkmap
+	uint16_t bit_field = 0x0000;
 
 	//seed rand with current system time
 	srand(time(NULL));
@@ -20,11 +17,11 @@ void generate(const uint16_t *count, const uint16_t *max, const uint16_t *min) {
 	do {
 		//generate number between min - max, it is still only a candidate without validation (enforce to be unique)
 		num = (rand() % (*max - *min + 1)) + *min;
-		//check the number based on index of the check map
-		if (checkmap[(num - *min)] == false) {
+		//check the number based on the check map
+		if (!IS_SET(bit_field, num)) {
 			//if checkmap indicates the value is not present -> program attempts to copy it to the array in a safe manner: if it succeeds the checkmap is changed to true on position
 			if(memcpy_safe(&arr[inclusions],sizeof(arr),&num,sizeof(uint16_t))){
-				checkmap[(num - *min)] = true;
+				SET(bit_field, num);
 				inclusions++;
 			}else{
 				fprintf(stderr, "Cannot access memory in copy operation.\n");
@@ -59,6 +56,21 @@ int memcpy_safe(void* dst, size_t dst_size, void* src, size_t src_size){
 	
 	//after validation, the program can continue to use memcpy
 	memcpy(dst, src, dst_size);
-    	return 1;
+} 
 
+
+
+void SET(uint16_t BF, uint16_t N){
+	BF |= ((uint16_t)0x0001 << N);
 }
+ 
+void CLR(uint16_t BF, uint16_t N){
+        BF &= ~((uint16_t)0x0001 << N);
+}
+
+bool IS_SET(uint16_t BF, uint16_t N){
+        return ((BF >> N) & 0x1);
+}  
+
+
+
