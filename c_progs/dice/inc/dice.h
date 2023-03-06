@@ -2,7 +2,7 @@
 #include <inttypes.h>
 #include "../inc/input_parser.h"
 
-//maximum array sie of the program is 32 767 
+//maximum array size of the program is 32 767 
 #define ARR_MAX SHRT_MAX
 
 //bitfield-handling helper functions:
