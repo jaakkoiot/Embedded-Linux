@@ -42,7 +42,7 @@ void generate(const uint16_t *count, const uint16_t *max, const uint16_t *min) {
 }
 
 int memcpy_safe(void* dst, size_t dst_size, void* src, size_t src_size){
-	//validation: data to copy or source must not be 0 and sie of the destination must be large enough to hold data being copied
+	//validation: data to copy or source must not be 0 and size of the destination must be large enough to hold data being copied
 	if (src_size == 0){
 		return 0;
 	}
